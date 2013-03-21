@@ -1,25 +1,30 @@
-<!-- new.html.erb -->
 <h1> Add a picture! </h1>
-
-<form action="/pictures" method="POST"><!--  sending something to the url therefore using POST -->
+<!--<form action="/pictures" method="POST">  sending something to the url therefore using POST -->
+<%= form_tag "/pictures" do %>
 
 <p>
 	<label>Artist</label><br>
-	<input type="text" name="artist"/>
+<!-- 	<input type="text" name="artist"/> -->
+	<%= text_field_tag "artist" %>
 </p>
 
 <p>
 	<label>Title</label><br>
-	<input type="text" name="title"/>
+	<!-- <input type="text" name="title"/> -->
+		<%= text_field_tag "title" %>
+
 </p>
 
 <p>
 	<label>URL</label><br>
-	<input type="text" name="url"/>
+<!-- 	<input type="text" name="url"/>-->
+		<%= text_field_tag "url" %>
+
 </p>
 
 <p>
 	<input type="submit"/>
 </p>
 
-</form>
+<!-- </form> -->
+<% end %>
