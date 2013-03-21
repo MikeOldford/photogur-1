@@ -4,4 +4,6 @@ class Picture < ActiveRecord::Base
 	#title and artist and url
 	#don't confuse with attr_acccessor
 
+	validates :title, :presence => true
+	validates :url, :presence => true
 end

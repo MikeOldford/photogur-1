@@ -24,7 +24,10 @@ class PicturesController < ApplicationController
 		@picture =Picture.new(params[:picture])
 			#create doesnt return a boolean, always returns an instance of a picture
 		if @picture.save #returns true or false
-			redirect_to '/pictures' #pictures_path
+			redirect_to pictures_path
+		else
+			flash.now[:error] = "Ya dun goofed."
+			render :new
 		end
 
 		# @picture = Picture.new
@@ -46,9 +49,17 @@ class PicturesController < ApplicationController
 
 	def update
 		@picture = Picture.find(params[:id])
-		@picture.update_attributes(params[:picture])
-	
-		redirect_to '/pictures' 
+
+		if @picture.update_attributes(params[:picture])
+			redirect_to pictures_path(@picture.id)
+			#named routes are convenience methods created by ruby to help us navigate the application
+			#redirect_to "/pictures/#{@picture.id}"
+		else
+			#redirect_to "/pictures"
+			redirect_to pictures_path
+
+		end	
+		
 	end
 
 	# def load_pictures

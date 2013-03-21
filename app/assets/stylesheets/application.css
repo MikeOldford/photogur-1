@@ -1,4 +1,4 @@
-/*
+
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require_tree .
- */
+ 
 
 img {
 	height: 200px;
@@ -24,8 +24,10 @@ p{
 }
 
 body{
-	background: url(http://www.hdwallpapers.in/walls/abstract_color_background_picture_8016-wide.jpg);
-	color:white;
+	background-image: url(http://i.imgur.com/h2L3dxr.jpg);
+	background-size: 100%;
+	background-attachment: fixed;
+	color: #666;
 }
 
 
@@ -38,3 +40,16 @@ h2{
 	color: red;
 	font-size 25px;
 }
+
+ul{ background-color: #666;
+
+}
+
+.field_with_errors input{
+	border: 1px solid red;
+}
+
+
+
+
+

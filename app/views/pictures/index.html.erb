@@ -1,11 +1,16 @@
+<h1>Pictures</h1>
 
+<!-- <a href="/pictures/new">New Picture</a -->
+<a href="<%= new_picture_path %>">New Picture</a>
 
-<h1>Awesome Pics</h1>
-
-
-<%- @pictures.reverse.each do |picture| %>
+<% @pictures.reverse.each do |picture| %>
 	<p><strong> <%= picture.title %></strong> </p>
-	<p><img src="<%= picture.url %>"></p>
+
+	
+
 	<p><em>Artist: <%= picture.artist %></em></p>
-	<br>
+	<%= link_to picture_path(picture) do %>
+			<img src= "<%= picture.url%>">
+		<% end %>
+		<%= button_to "Edit", edit_picture_path(picture), :method => :get%>
 <% end %>
