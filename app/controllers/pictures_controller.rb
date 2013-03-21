@@ -21,8 +21,9 @@ class PicturesController < ApplicationController
 	end
 
 	def create
-		
-		if Picture.create(params[:picture])
+		@picture =Picture.new(params[:picture])
+			#create doesnt return a boolean, always returns an instance of a picture
+		if @picture.save #returns true or false
 			redirect_to '/pictures' #pictures_path
 		end
 
@@ -45,9 +46,7 @@ class PicturesController < ApplicationController
 
 	def update
 		@picture = Picture.find(params[:id])
-		@picture.update_attribute(:url, params[:url])
-		@picture.update_attribute(:title, params[:title])
-		@picture.update_attribute(:artist, params[:artist])
+		@picture.update_attributes(params[:picture])
 	
 		redirect_to '/pictures' 
 	end

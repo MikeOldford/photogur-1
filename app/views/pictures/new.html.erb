@@ -1,23 +1,22 @@
 <h1> Add a picture! </h1>
 
  <%= form_for @picture do |f| %>
-
 	<p>
 		<label>Artist</label><br>
-		<%= f.text_field "artist" %>
+		<%= f.text_field :artist %>
 	</p>
 
 	<p>
 		<label>Title</label><br>
-			<%= f.text_field "title" %>
+			<%= f.text_field :title %>
 	</p>
 
 	<p>
 		<label>URL</label><br>
-			<%= f.text_field "url" %>
+			<%= f.text_field :url %>
 	</p>
 
 	<p>
-		<%= f.submit "Update" %>
+		<%= f.submit "Save" %>
 	</p>
 <% end %>

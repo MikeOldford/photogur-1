@@ -1,27 +1,22 @@
-<!-- edit.html.erb -->
+<h1> Edit a picture! </h1>
 
-<h1>Edit a Picture</h1>
+ <%= form_for @picture do |f| %>
+	<p>
+		<label>Artist</label><br>
+		<%= f.text_field :artist %>
+	</p>
 
+	<p>
+		<label>Title</label><br>
+			<%= f.text_field :title %>
+	</p>
 
-<form action="/pictures/<%= @picture.id %>/edit" method="POST"><!--  sending something to the url therefore using POST -->
+	<p>
+		<label>URL</label><br>
+			<%= f.text_field :url %>
+	</p>
 
-<p>
-	<label>Artist</label><br>
-	<input type="text" name="artist" value="<%= @picture.artist %>"/>
-</p>
-
-<p>
-	<label>Title</label><br>
-	<input type="text" name="title" value="<%= @picture.title %>"/>
-</p>
-
-<p>
-	<label>URL</label><br>
-	<input type="text" name="url" value="<%= @picture.url %>"/>
-</p>
-
-<p>
-	<input type="submit"/>
-</p>
-
-</form>
+	<p>
+		<%= f.submit "Update" %>
+	</p>
+<% end %>
