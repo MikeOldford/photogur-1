@@ -80,6 +80,11 @@ class PicturesController < ApplicationController
 		# 		:url => 'http://i.imgur.com/Hebp5.jpg'}
 		# ]	
 	# end
+	def destroy
+		@picture = Picture.find(params[:id])
+		@picture.destroy
+		redirect_to pictures_path
+	end
 
 
 end

@@ -1,6 +1,15 @@
 <%= params %>
 <hr>
+<%= link_to "Delete", @picture, :method => :delete %>
 
 <h1><%= @picture[:title] %></h1>
+
 <h3><%= @picture[:artist] %></h3>
+
 <img src="<%=@picture[:url] %>">
+
+<% if @picture.copyrighted %>
+	<p>
+		This picture is copyrighted.
+	</p>
+<% end %> 
